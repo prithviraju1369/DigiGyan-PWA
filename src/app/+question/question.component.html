@@ -1,9 +1,14 @@
 <div class="question-container">
   <h1>DigiGyan</h1>
   <div class="question-header">
-    <div ><a [routerLink]="['/questions']"> Back</a></div>
+  <a [routerLink]="['/questions']">
+    <picture>
+        <img src="./../../assets/ic_keyboard_arrow_left_black_24dp_1x.png" 
+          alt="">
+      </picture>
+    <div > Back</div></a>
   </div>
-  <div class="question">
+  <div class="question" *ngIf="questionFound">
     <div class="question-title">
       <h3>{{question.title}}</h3></div>
     <div class="question-description">{{question.description}}</div>
@@ -38,5 +43,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="question-notFound" *ngIf="!questionFound">
+      <div>Data not available</div>
   </div>
 </div>

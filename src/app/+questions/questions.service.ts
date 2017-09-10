@@ -52,5 +52,44 @@ export class QuestionsService {
                 .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
         return result;
     }
+    searchRelated(term:string,user:string):Observable<any>{
+        if(term.trim()!=''){
+            return this.searchRelatedQuery(term,user);
+        }else{
+            return this.getRelatedContent(user);
+        }
+    }
+
+    searchMyQuestions(term:string,user:string):Observable<any>{
+        if(term.trim()!=''){
+            return this.searchMyQuery(term,user);
+        }else{
+            return this.getMyContent(user);
+        }
+    }
+
+    searchMyQuery(term:string,user:string):Observable<any>{
+        let params: URLSearchParams = new URLSearchParams();
+        params.set('user', user);
+        params.set('search', term);
+        let requestOptions = new RequestOptions();
+        requestOptions.search = params;
+        let result = this.http.get('/profileapi/myContentSearch',requestOptions)
+                .map((res: Response) => res.json())
+                .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+        return result;
+    }
+
+    searchRelatedQuery(term:string,user:string):Observable<any>{
+        let params: URLSearchParams = new URLSearchParams();
+        params.set('user', user);
+        params.set('search', term);
+        let requestOptions = new RequestOptions();
+        requestOptions.search = params;
+        let result = this.http.get('/profileapi/relatedContentSearch',requestOptions)
+                .map((res: Response) => res.json())
+                .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+        return result;
+    }
 
 }

@@ -9,7 +9,9 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "service-worker.js",
+        "manifest.json"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -20,6 +22,7 @@
       "prefix": "app",
       "styles": [
         "styles.scss"
+        
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

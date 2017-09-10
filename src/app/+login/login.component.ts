@@ -15,6 +15,9 @@ import {MdSnackBar} from '@angular/material';
 export class LoginComponent implements OnInit {
 	user:profile={};
     constructor(private router: Router,public snackbar:MdSnackBar,private _loginService: LoginService) {
+    	if(sessionStorage.getItem('username_id')){
+    		this.router.navigate(['./questions']);
+    	}
 
     }
 
@@ -24,6 +27,13 @@ export class LoginComponent implements OnInit {
     login(){
     	let self=this;
     	let msg='';
+    	if(!window.navigator.onLine){
+    		msg='Device is offline. Login when you are Online';
+    		self.snackbar.open(msg, 'Okay',{
+				      duration: 2000,
+				    });
+    		return false;
+    	}
     	if(self.user){
     		if(!self.user.username || !self.user.password){
 					msg='please fill the fields';

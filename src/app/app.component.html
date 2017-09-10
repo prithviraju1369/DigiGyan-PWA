@@ -1,5 +1,6 @@
-<div id="mainContainer">
+<div id="mainContainer" [ngClass]="{'digiOff-theme': offLine}">
   <div class="container-loading" id="content">
     <router-outlet></router-outlet>
   </div>
 </div>
+	

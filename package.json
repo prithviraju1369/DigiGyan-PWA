@@ -4,13 +4,14 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "local": "ng serve --proxy-config proxy.config.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prod": "ng build --prod",
-    "dev": "ng build --dev"
+    "prod": "ng build --prod && npm run sw",
+    "dev": "ng build --dev",
+    "sw": "sw-precache --root=dist --config=sw-precache-config.js"
   },
   "private": true,
   "dependencies": {
@@ -29,10 +30,13 @@
     "compression": "^1.7.0",
     "core-js": "^2.4.1",
     "express": "^4.15.4",
+    "fcm-push": "^1.1.2",
     "hammerjs": "^2.0.8",
     "mongoose": "^4.11.9",
+    "pouchdb": "^6.3.4",
     "rxjs": "^5.4.2",
     "web-animations-js": "^2.3.1",
+    "web-push": "^3.2.2",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
@@ -52,6 +56,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
+    "sw-precache": "^5.2.0",
     "ts-node": "~3.2.0",
     "tslint": "~5.3.2",
     "typescript": "~2.3.3"

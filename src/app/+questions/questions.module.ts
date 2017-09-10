@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { QuestionsComponent }   from './questions.component';
 import { RelatedComponent }   from './related/related.component';
@@ -18,7 +18,7 @@ const routes: Routes = [
 
 // questions module bootstrapping
 @NgModule({
-    imports: [RouterModule.forChild(routes),FormsModule,CommonModule,MaterialModule],
+    imports: [RouterModule.forChild(routes),FormsModule,CommonModule,MaterialModule,ReactiveFormsModule],
     declarations: [QuestionsComponent,RelatedComponent,AskComponent,MyComponent],
     providers:[QuestionsService]
 })

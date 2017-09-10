@@ -6,7 +6,9 @@ var bodyParser = require('body-parser');
 var compression = require('compression');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/digigyan');
+
+//mongodb://localhost:27017/digigyan
+mongoose.connect('mongodb://prithvi:prithvi1369@ds133004.mlab.com:33004/digigyan');
 
 var profile = require('./server/routes/profile.js');
 
@@ -19,6 +21,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use('/profileapi', profile);
+
+
+
+
+
+
+// This is the same output of calling JSON.stringify on a PushSubscription
 
 
 

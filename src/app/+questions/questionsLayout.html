@@ -2,11 +2,12 @@
   <div class="questions-container">
     <div class="questions-search">
       <md-input-container style="width: 100%;">
-        <input mdInput placeholder="Search a Question" id="listSearch" #term type="search" name="search" [(ngModel)]="search">
+        <input mdInput placeholder="Search a Question" #term (keyup)="search(term.value)" id="listSearch" type="text" name="search" >
       </md-input-container>
     </div>
     <div class="questions-grid">
     	<div class="question" *ngFor="let question of questions">
+        <a [routerLink]="['./../question/',question._id]">
     		<div class="question-title">
     			<h4>{{question.title}}</h4>
     		</div>
@@ -17,6 +18,7 @@
     			<div class=""><span>Likes 2</span></div>
     			<div class=""><span>Answers {{question.comments.length}}</span></div>
     		</div>
+            </a>
     	</div>
     </div>
   </div>
