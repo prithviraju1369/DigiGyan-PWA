@@ -1,0 +1,23 @@
+<div class="register-container">
+    <h1>DigiGyan</h1>
+  <div class="register-content">
+    <h3>Register</h3>
+    <div class="register-card">
+      <md-input-container class="register-input">
+        <input mdInput type="text" required placeholder="Username" [(ngModel)]="user.username">
+      </md-input-container>
+      <md-input-container class="register-input">
+        <input mdInput type="password" required placeholder="password" [(ngModel)]="user.password">
+      </md-input-container>
+      <div class="Tags">
+        <h4>Tags</h4>
+        <section>
+          <md-checkbox color="primary" *ngFor="let tag of tags" [(ngModel)]="tag.selected">{{tag.name}}</md-checkbox>
+        </section>
+      </div>
+      <div class="create-register">
+        <button md-raised-button (click)="register()" color="primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

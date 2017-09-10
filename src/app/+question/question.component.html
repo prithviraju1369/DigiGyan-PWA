@@ -1,0 +1,42 @@
+<div class="question-container">
+  <h1>DigiGyan</h1>
+  <div class="question-header">
+    <div ><a [routerLink]="['/questions']"> Back</a></div>
+  </div>
+  <div class="question">
+    <div class="question-title">
+      <h3>{{question.title}}</h3></div>
+    <div class="question-description">{{question.description}}</div>
+    <div class="question-footer">
+      <div class="question-answer-placeholder">Answers</div>
+      <div class="question-answer-you" (click)="answerQuestion()">You want to answer this?</div>
+    </div>
+    <div class="answer-container" *ngIf="answerIt">
+      <div class="answer-title">
+        <h4>My Answer</h4>
+      </div>
+      <div class="answer-text">
+        <md-input-container class="description">
+          <textarea mdInput type="Description" placeholder="Description" [(ngModel)]="description"></textarea>
+        </md-input-container>
+      </div>
+      <div class="answer-submit">
+        <button md-raised-button (click)="submit()" color="primary">Submit</button>
+      </div>
+    </div>
+    <div class="answers-container">
+      <div class="answer" *ngFor="let comment of question.comments">
+        <div class="answer-description">{{comment.text}} </div>
+        <div class="answer-footer">
+          <div class="answered-by">Posted by {{comment.postedBy
+          .username}}</div>
+          <div class="answer-like-container">
+            <div hidden="true" *ngFor="let like of comment.likes">{{like}}</div>
+            <div class="liked">Liked {{comment.likes.length}}</div>
+            <div class="like-it" (click)="likeIt(comment)" *ngIf="checkLiked(comment.likes)">Do you like this?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

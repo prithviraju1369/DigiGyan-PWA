@@ -1,0 +1,18 @@
+<div class="login-container">
+    <h1>DigiGyan</h1>
+  <div class="login-content">
+    <h3>Login</h3>
+    <div class="login-card">
+      <md-input-container class="login-input">
+        <input mdInput type="text" required placeholder="Username" [(ngModel)]="user.username">
+      </md-input-container>
+      <md-input-container class="login-input">
+        <input mdInput type="password" required placeholder="password" [(ngModel)]="user.password">
+      </md-input-container>
+      <div class="create-login">
+        <button md-raised-button (click)="login()" color="primary">Submit</button>
+        <div><a [routerLink]="['/register']">Register User</a></div>
+      </div>
+    </div>
+  </div>
+</div>

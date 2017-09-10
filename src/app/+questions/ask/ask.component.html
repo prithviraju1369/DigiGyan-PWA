@@ -1,0 +1,23 @@
+<div class="ask-container">
+<div class="ask-content">
+  <div>
+    <md-input-container class="title">
+      <input mdInput type="text" placeholder="Title" [(ngModel)]="question.title">
+    </md-input-container>
+  </div>
+  <div>
+    <md-input-container class="description">
+      <textarea mdInput type="Description" placeholder="Description" [(ngModel)]="question.description"></textarea>
+    </md-input-container>
+  </div>
+  <div class="tags-conatiner">
+  	<h4>Tags</h4>
+  	<section>
+          <md-checkbox color="primary" *ngFor="let tag of tags" [(ngModel)]="tag.selected">{{tag.name}}</md-checkbox>
+    </section>
+  </div>
+  <div class="ask-submit">
+        <button md-raised-button (click)="submit()" color="primary">Submit</button>
+      </div>
+  </div>
+</div>

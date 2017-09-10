@@ -1,0 +1,42 @@
+.register-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+  margin-top: 0%;
+  .register-content {
+    padding: 16px;
+    margin: 16px;
+    .register-card {
+      .register-input {
+        display: block;
+        min-width: 240px;
+        @media screen and (min-width: 720px) {
+          min-width: 480px;
+        }
+      }
+      .create-register {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 0 10px;
+        div {
+          margin: 30px 20px;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+section {
+    margin:20px 20px 20px 0;
+    md-checkbox {
+    margin: 10px 20px 10px 0;
+    }
+}
