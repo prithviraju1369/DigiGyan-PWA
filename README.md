@@ -1,6 +1,6 @@
 # DigiGyan - Progressive Web App
 
-#DEMO : https://digigyan-pwa.herokuapp.com/
+# DEMO : https://digigyan-pwa.herokuapp.com/
 
 # Features:
 	1. App Add to Home Screen Option.
