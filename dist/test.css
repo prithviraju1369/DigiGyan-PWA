@@ -1,4 +1,5 @@
 .vjs-icon-play:before, .video-js .vjs-big-play-button .vjs-icon-placeholder:before, .video-js .vjs-play-control .vjs-icon-placeholder:before{content:"";background-image:url(http://localhost:4502/content/dam/parents/play.png);background-size:contain;background-repeat:no-repeat; background-position: center;}
+.vjs-icon-pause:before{background: none;}
 .bc-player-ryhaxPMKG_default .vjs-play-progress, .bc-player-ryhaxPMKG_default .vjs-volume-level, .bc-player-ryhaxPMKG_default:hover .vjs-big-play-button, .bc-player-ryhaxPMKG_default:active .vjs-big-play-button, .bc-player-ryhaxPMKG_default .vjs-big-play-button:active, .bc-player-ryhaxPMKG_default .vjs-big-play-button:focus, .bc-player-ryhaxPMKG_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item.vjs-selected, .bc-iframe .vjs-playlist-sidebar .vjs-playlist-show-hide button:hover{
     background: transparent;
 }
