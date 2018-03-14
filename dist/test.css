@@ -1,1 +1,1 @@
-.vjs-icon-play:before{content:"";background-image:url(http://localhost:4502/content/dam/parents/play.png);background-size:cover}
+.vjs-icon-play:before, .video-js .vjs-big-play-button .vjs-icon-placeholder:before, .video-js .vjs-play-control .vjs-icon-placeholder:before{content:"";background-image:url(http://localhost:4502/content/dam/parents/play.png);background-size:cover}
